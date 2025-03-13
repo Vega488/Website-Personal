@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vega Retsuya</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="photo/Aralie.jpg">
+</head>
+<body>
+    <!-- Particles Background -->
+    <div id="particles-container"></div>
+    <canvas id="vegaCanvas"></canvas>
+    <nav class="Nama">
+        <div class="profile-pic">
+            <img src="photo/profile.webp" alt="Foto Profil" width="20px">
+        </div>
+        <ul>
+            <li>
+                <h3>VEGA RETSUYA</h3>
+            </li>
+        </ul>
+    </nav>
+    
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Achievements</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="center-content">
+        <img id="profile-image" src="photo/si ganteng.jpg" alt="Profile Picture">
+        <h1>Hi There, I'm Vega Retsuya</h1>
+        <h3 id="typewriter"></h3>
+    </div>
+
+    <div class="cv">
+        <a href="cv-vega.pdf" download class="download-cv">
+            <img src="photo/download.webp" alt="Download" class="download-icon">
+            Download Curriculum Vitae
+        </a>
+    </div>
+    
+    <div class="contact-website">
+        <a href="https://www.instagram.com/jkt48.aralie?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img src="photo/IG_Transparan.png" alt="instagram" width="90"></a>
+        <a href="https://youtube.com/@vegartsya?si=ia-b63Jy-9IcshTJ"><img src="photo/YT_Transparan.webp" alt="Youtube" width="50"></a>
+        <a href="https://vm.tiktok.com/ZSMMtm466/"><img src="photo/Tiktok_Transparan.webp" alt="Tiktok" width="50"></a>
+    </div>
+    <!-- Chatbot Button -->
+<div id="chatbot-button">
+    <span id="chatbot-wave">🤖</span>
+    <span id="chatbot-greeting">Hai, ada yang ingin ditanyakan?</span>
+</div>
+
+<!-- Chatbot Container -->
+<div id="chatbot-container">
+    <div id="chatbot-header">
+        <button id="chatbot-close">✖</button>
+    </div>
+    
+    <div id="chatbot-messages"></div>
+    <div id="chatbot-input">
+        <input type="text" id="chat-input" placeholder="Tanya sesuatu..." />
+        <button id="send-button">➤</button>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Vega Retsuya. All rights reserved.</p>
+</footer>
+
+    <script src="script.js"></script>
+    <script>
+        (function () {
+            if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+                window.chatbase = (...args) => {
+                    if (!window.chatbase.q) {
+                        window.chatbase.q = [];
+                    }
+                    window.chatbase.q.push(args);
+                };
+        
+                window.chatbase = new Proxy(window.chatbase, {
+                    get(target, prop) {
+                        if (prop === "q") {
+                            return target.q;
+                        }
+                        return (...args) => target(prop, ...args);
+                    }
+                });
+            }
+        
+            const onLoad = function () {
+                const script = document.createElement("script");
+                script.src = "https://www.chatbase.co/embed.min.js";
+                script.id = "B9rA_nKHkNT1UaDZCso1M";
+                script.domain = "www.chatbase.co";
+                document.body.appendChild(script);
+            };
+        
+            if (document.readyState === "complete") {
+                onLoad();
+            } else {
+                window.addEventListener("load", onLoad);
+            }
+        })();
+        </script>
+</body>
+</html>
