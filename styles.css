@@ -388,6 +388,7 @@ nav ul li a:hover::after {
     font-weight: bold;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 3;
 }
 
 .download-cv:hover {
@@ -490,4 +491,55 @@ footer {
 footer p:hover {
     text-shadow: 0 0 8px #5d5e5e, 0 0 15px cyan;
     transition: 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    #profile-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .animated-element {
+        animation: none !important;
+        transform: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .particle {
+        width: 3px;
+        height: 3px;
+        animation-duration: 8s;
+    }
+}
+@media (max-width: 768px) {
+    .floating-element {
+        position: static;
+        opacity: 0.8;
+    }
+
+    .planet {
+        display: none; /* Sembunyikan planet biar lebih simpel */
+    }
 }
