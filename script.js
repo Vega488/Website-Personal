@@ -82,6 +82,19 @@ function initParticles() {
     }
 }
 
+function initParticles() {
+    particles = [];
+    let particleCount = window.innerWidth <= 768 ? 38 : 100; // 60 untuk mobile, 100 untuk desktop
+    for (let i = 0; i < particleCount; i++) {
+        particles.push(new Particle());
+    }
+}
+
+window.addEventListener("resize", () => {
+    initParticles(); // Menginisialisasi ulang partikel saat layar berubah ukuran
+});
+
+
 initParticles();
 
 // Animasi Partikel
@@ -94,7 +107,7 @@ function animateParticles() {
             let dy = particles[i].y - particles[j].y;
             let distance = Math.sqrt(dx * dx + dy * dy);
 
-            if (distance < 170) { // 🔥 Panjang tali lebih panjang
+            if (distance < 160) { // 🔥 Panjang tali lebih panjang
                 particleCtx.strokeStyle = "rgba(30, 144, 255, 0.5)";
                 particleCtx.lineWidth = 0.75;
                 particleCtx.beginPath();
@@ -414,7 +427,7 @@ document.addEventListener("DOMContentLoaded", function () {
         icon.style.left = `${x}px`;
         icon.style.top = `${y}px`;
 
-        let velocityX = (Math.random() - 0.5) * 0.6; // Kecepatan lebih kecil
+        let velocityX = (Math.random() - 0.5) * 0.6; // Kecepatan lebih kecilzzzz
         let velocityY = (Math.random() - 0.5) * 0.6; // Pergerakan lebih halus
 
         function moveIcon() {
